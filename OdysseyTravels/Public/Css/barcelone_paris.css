@@ -1,0 +1,246 @@
+body{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to left, #A5CC82, #00467F);
+}
+  /* Position the image container (needed to position the left and right arrows) */
+  #container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    /* margin-top: 30px; */
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    width: auto;
+    padding: 16px;
+    margin-top: 250px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    border-radius: 1em;
+  }
+  .prgrm{
+    width: 90%;
+    margin: auto;
+    background-color: #00001a;
+    border-radius: 1em;
+    color: white;
+  }
+  .bar{
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
+  .bar h1{
+    background-color: rgb(255, 255, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-shadow: 1px 1px 150px #ffffff; */
+  }
+
+  .tour{
+    /* margin-left: 30px; */
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .tour li{
+    list-style: disc;
+  }
+
+  .left img{
+    width: 32px;
+    display: inline;
+  }
+
+  .left h1{
+    display: inline;
+  }
+
+
+
+  .card {
+    width: 300px;
+    height: 150px;
+    margin-left: 850px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+  
+  .card:hover {
+    transform: scale(1.04) rotate(1deg);
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#b0e633, #53ef7d);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+  }
+  
+  .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+  
+  .circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+  }
+  
+  @keyframes move-up6 {
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes move-down1 {
+    to {
+      transform: translateY(10px);
+    }
+  }
+
+
+.left2{
+  margin-left: 80px;
+  text-align: left;
+}
+.left2 h1{
+  color: #53ef7d;
+
+}
+
+
+/* === removing default button style ===*/
+.button {
+  margin-left: 50px;
+  margin-top: 50px;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  cursor: pointer;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+#nb_passenger{
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 1rem;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#nb_passenger:focus{
+  border: 2px solid #1a73e8;
+  outline: none;
+}
+
+
+label{
+  font-size: 30px ;
+}
+
+.prix h1{
+  font-size: 60px;
+  color: #ff0000;
+}
+
+.air{
+  margin-top: 100px;
+}
+.air img{
+  width: 400px;
+}
