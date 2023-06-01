@@ -1,0 +1,64 @@
+ip route 192.168.4.0 255.255.255.0 192.168.4.10
+ip route 192.168.3.0 255.255.255.0 192.168.3.10
+
+
+
+<h1>Programme de voyage à Paris</h1>
+      <h2>Jour 1: Arrivée à Paris</h2>
+      <ul>
+        <li>Transfert depuis l'aéroport vers l'hôtel</li>
+        <li>Temps libre pour se reposer ou explorer les environs de l'hôtel</li>
+      </ul>
+
+      <h2>Jour 2: Découverte de Paris</h2>
+      <ul>
+        <li>Visite guidée de la Tour Eiffel</li>
+        <li>Déjeuner</li>
+        <li>Visite de l'Arc de Triomphe</li>
+        <li>Temps libre pour explorer la ville</li>
+      </ul>
+
+      <h2>Jour 3: Le Louvre et Notre-Dame de Paris</h2>
+      <ul>
+        <li>Visite guidée du musée du Louvre</li>
+        <li>Déjeuner</li>
+        <li>Visite de la cathédrale Notre-Dame de Paris</li>
+        <li>Temps libre pour explorer la ville</li>
+      </ul>
+
+      <h2>Jour 4: Versailles et la Tour Montparnasse</h2>
+      <ul>
+        <li>Visite guidée du château de Versailles</li>
+        <li>Déjeuner</li>
+        <li>Ascension de la Tour Montparnasse pour une vue panoramique de Paris</li>
+        <li>Retour à l'hôtel en fin de journée</li>
+      </ul>
+
+      <h2>Jour 5: Disneyland Paris</h2>
+      <ul>
+        <li>Transfert vers le parc Disneyland Paris</li>
+        <li>Journée libre pour profiter des attractions et spectacles</li>
+        <li>Retour à l'hôtel en fin de journée</li>
+      </ul>
+
+      <h2>Jour 6: Montmartre et Moulin Rouge</h2>
+      <ul>
+        <li>Visite guidée de la basilique du Sacré-Cœur à Montmartre</li>
+        <li>Déjeuner</li>
+        <li>Soirée au célèbre cabaret du Moulin Rouge</li>
+        <li>Retour à l'hôtel en fin de soirée</li>
+      </ul>
+
+      <h2>Jour 7: Musées et shopping</h2>
+      <ul>
+        <li>Visite du musée d'Orsay ou du Centre Pompidou</li>
+        <li>Déjeuner</li>
+        <li>Temps libre pour faire du shopping dans les boutiques locales</li>
+        <li>Retour à l'hôtel en fin de journée</li>
+      </ul>
+
+      <h2>Jour 8: Départ de Paris</h2>
+      <ul>
+        <li>Transfert depuis l'hôtel vers l'aéroport</li>
+      </ul>
+    	
