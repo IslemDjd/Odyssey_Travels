@@ -38,7 +38,6 @@ if(isset($_POST['reset']))
             $update=mysqli_query($conn,"UPDATE `users` SET `code_verif`='$token' WHERE email='$get_email' LIMIT 1");
             if($update)
             {
-                $_SESSION['Valid'] = '1';
                 $mail = new PHPMailer(true);            
                 $mail->isSMTP();                                            
                 $mail->Host       = 'smtp.gmail.com';                    

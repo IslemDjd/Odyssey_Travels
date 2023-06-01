@@ -13,6 +13,12 @@ p{
     color: #111;
 }
 
+.desp{
+    background-color: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 30px #ffffff;
+}
 
 
 .Accueil{
@@ -105,6 +111,13 @@ section{
     font-size: 1.5em;
     font-weight: 700px;
 }
+.titre-texte{
+    color: white;
+    /* background-color: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 30px #ffffff; */
+}
 
 .row .col50 img{
     height: 450px;
@@ -113,6 +126,7 @@ section{
 }
 
 .titre{
+    font-size: 32px;
     display: flex;
     width: 100%;
     justify-content: center;

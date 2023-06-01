@@ -87,7 +87,9 @@ $sql = "UPDATE `users` SET `profile_picture`='$new_name' WHERE email = '$email'"
                 if(!empty($image_name)){
                     mysqli_query($conn,$sql);
                     if(move_uploaded_file($_FILES['pic_profile']['tmp_name'],$dir)){
+                        $_SESSION['creat']="your informations has been saved successfully!";
                         header('location:compte.php');
+                        die;
                     }
 
                 }
@@ -368,13 +370,13 @@ if(isset($_POST['Nv_pass']))
 while($data=mysqli_fetch_assoc($seelct))
 {
     if(empty($data['profile_picture']) && $data['gender']=="male"){
-        echo '<img src="pfp_picture/no-profil-picture-male.jpg" alt="" width="200">';
+        echo '<img src="pfp_picture/no-profil-picture-male.jpg" alt="" width="200" id="photo">';
 
     }else if(empty($data['profile_picture']) && $data['gender']=="female"){
-        echo '<img src="pfp_picture/no-profil-picture-female.jpg" alt="" width="200">';
+        echo '<img src="pfp_picture/no-profil-picture-female.jpg" alt="" width="200" id="photo">';
     }else
     {
-        echo '<img src="pfp_picture/'.$data['profile_picture'].'" alt="" width="200">';
+        echo '<img src="pfp_picture/'.$data['profile_picture'].'" alt="" width="200" id="photo">';
     }
 }
 ?>
@@ -388,17 +390,26 @@ while($data=mysqli_fetch_assoc($seelct))
 
                   
         
-                        
-                         
-                        
                             
-<input type="file" name="pic_profile" id="add" hidden>
+                     
+            
+
+
+                        
+ 
+
+ <div  class="profile-pic-div">                          
+<input type="file" name="pic_profile" id="file" hidden>
 <div class="ajt">
-     <label for="add" class="add" ><p>Add Image</p></label>
+<label for="file" id="uploadBtn" class="add" ><p>Add Image</p></label>
+
 </div>
 <br>
 <button type="submit" name="submit">Upload</button>
-<br><br>  <br>                          <!-- Submit button -->
+<br><br><br>    
+
+
+<!-- Submit button -->
                             <div class="delete">
                             <button  onclick="return confirm('are sure you want to delete your profile picture?');"
                             type="submit" name="delete_image" id="submit"> Delete image </button>
@@ -510,7 +521,7 @@ while($data=mysqli_fetch_assoc($seelct))
                 
                 <div style="position: relative;">
 
-                    <form action"" method="post" style="max-width: 550px; margin: 20px auto; padding: 20px; border-radius: 8px;">
+                    <form action="" method="post" style="max-width: 550px; margin: 20px auto; padding: 20px; border-radius: 8px;">
                         <!-- TITLE -->
                         <h2>Votre mot de passe</h2>
                     <p>Modifier votre mot de passer pour vous connecter à votre compte.</p><br>
@@ -551,7 +562,7 @@ while($data=mysqli_fetch_assoc($seelct))
 
                    
         
-                        <form action"" method="post"
+                        <form action="" method="post"
                             style="max-width: 550px; margin: 20px auto; padding: 20px; border-radius: 8px;">
                             <h2>Supprimer votre compte</h2>
                         <p>Toutes vos données seront supprimées définitivement</p><br><br>
@@ -575,5 +586,37 @@ while($data=mysqli_fetch_assoc($seelct))
         
 
     </main>
+
+
+    <script>
+                
+const imgDiv = document.querySelector('.profile-pic-div');
+const img = document.querySelector('#photo');
+const file = document.querySelector('#file');
+const uploadBtn = document.querySelector('#uploadBtn');
+
+
+
+
+
+file.addEventListener('change', function(){
+//this refers to file
+const choosedFile = this.files[0];
+
+if (choosedFile) {
+
+const reader = new FileReader(); //FileReader is a predefined function of JS
+
+reader.addEventListener('load', function(){
+img.setAttribute('src', reader.result);
+});
+
+reader.readAsDataURL(choosedFile);
+
+
+}
+});
+
+    </script>
 </body>
 </html>

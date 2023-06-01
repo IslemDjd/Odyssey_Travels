@@ -39,7 +39,7 @@ $page="ourtours";
           <li><a href="aboutus.php" class='<?php if($page== "aboutus"){echo "active";}?>'>ABOUT US</a></li>
           <?php if(isset($_SESSION['email'])):?>
                
-               <li><a href="compte.php" class='<?php if($page== "account"){echo "active";}?>'>ACCOUNT</a></li>
+               <!-- <li><a href="compte.php" class='<?php if($page== "account"){echo "active";}?>'>ACCOUNT</a></li> -->
                <li><a href="profil.php" class='<?php if($page== "profil"){echo "active";}?>'>PROFIL</a></li>
 
                <?php endif;?>
@@ -87,7 +87,7 @@ $page="ourtours";
             <div class="img2"></div>
             <div class="dsp2">
                 <h1>BARCELONE</h1><br>
-                <h3>Nous vous offrons un voyage complet a la capitale de la CATALOGNE et la ville de F.C BARCELONA </h3><br>
+                <h3>Nous vous offrons un voyage complet a la capitale de la CATALOGNE <br> et la ville de F.C BARCELONA </h3><br>
                 <a href="https://www.iberia.com/">
                     <div class="air">
                         <img src="ot/iberia.png" alt="iberia">

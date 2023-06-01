@@ -27,6 +27,16 @@ $page="hotels";
     border-width: 0;
     box-shadow: 1px 5px 0 0 #0e285d;
   }
+
+  
+     .ok{
+    background-color: rgb(148, 179, 101);
+     color: #red;
+   text-align: center;
+    padding: 10px;
+   
+}
+
   
 #det:hover {
     transform: translateY(-4px);
@@ -74,7 +84,7 @@ $page="hotels";
           <li><a href="aboutus.php" class='<?php if($page== "aboutus"){echo "active";}?>'>ABOUT US</a></li>
           <?php if(isset($_SESSION['email'])):?>
                
-               <li><a href="compte.php" class='<?php if($page== "account"){echo "active";}?>'>ACCOUNT</a></li>
+               <!-- <li><a href="compte.php" class='<?php if($page== "account"){echo "active";}?>'>ACCOUNT</a></li> -->
                <li><a href="profil.php" class='<?php if($page== "profil"){echo "active";}?>'>PROFIL</a></li>
 
                
@@ -100,22 +110,34 @@ $page="hotels";
   });
 </script>
 
+
+<?php if(isset($_SESSION['creat']) && $_SESSION['creat']!=""):?>
+
+<div class="ok">
+    <?php
+    {
+        echo $_SESSION['creat'];
+    }
+    unset($_SESSION['creat']);
+    ?>
+</div>
+<?php endif; ?>
 <section style="position: relative;top: 80px;" class="Hotels" id="Hotels">
     <div class="titre">
         <h2 class="titre-texte"><span>H</span>otels</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. </p>
     </div>
 </section>
-<section  class="Accueilhotels" id="Accueil">
-    <div style="position: relative; top: 20px;" class="contenu">
+<h3 class="desp" style="font-size:32px; font-weight:700; width:100%; text-align:center">Reserver Votre Hotel Avec Nos Partenaires de Classes</h3>
+<!-- <section  class="Accueilhotels" id="Accueil">
+    <div style="position: relative; bottom: 80px;" class="contenu">
         <h1 style="color: #fb911f; font-size: 50px;">Explorer le monde</h1>
         <h3 style="color: black;">Au sein du groupe <span style="color: #fb911f; font-size: 25px;">ODYSSEY</span>, ce sont des specialistes par destination qui sont à votre service pour organiser votre voyage.
              Leur expérience, la formation qu'ils ont reçue, leur passion  du voyage ou d'un pays en ont fait des experts. il sont à votre disposition pour élaborer 
              ,  avec vous, votre voyage et vous conseiller les meilleurs hotels ou itinéraire .</h3>
     </div>
-</section class="contenu">
+</section class="contenu"> -->
 
-<section style="position: relative;top: 10px;" class="Hotels" id="Hotels">
+<section style="position: relative;top: 10px;" class="Hotels" id="Hotels width:100%;">
     
 <section>
     <div id="myBtnContainer">
@@ -124,6 +146,9 @@ $page="hotels";
         <button class="btn" onclick="filterSelection('istanbul')"> istanbul</button>
         <button class="btn" onclick="filterSelection('dubai')"> Dubai</button>
         <button class="btn" onclick="filterSelection('algeria')"> Algeria</button>
+        <button class="btn" onclick="filterSelection('spain')"> Spain</button>
+        <button class="btn" onclick="filterSelection('france')"> France</button>
+        <button class="btn" onclick="filterSelection('greece')"> Greece</button>
       </div>
 
       <!--filter hotels-->
@@ -133,7 +158,7 @@ $page="hotels";
     <div class="contenu">
         <div style="background-color:white; border-radius:1em;" class="filterDiv maldives">
             <div>
-                <img src="images/kudadoo-maldives-private.jpg" alt="kudadoo-maldives-private" width="315px" height="310px">
+                <img style="border-radius:1em;" src="images/kudadoo-maldives-private.jpg" alt="kudadoo-maldives-private" width="315px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5; background-color:white;">
                 <h3 style="color: orange;">Hôtel kudadoo-maldives-private</h3>
@@ -149,13 +174,13 @@ $page="hotels";
     <!--Algeria filter-->
 
         <!--Hôtel Sheraton Oran, Algérie-->
-        <div style="background-color:white; border-radius:1em;" class="filterDiv algeria">
+        <div style="background-color:white; border-radius:1em;" class="filterDiv spain">
             <div>
-                <img src="images/sheraton-oran-immeuble.jpg" alt="sheraton-oran-immeuble" width="317px" height="310px">
+                <img style="border-radius:1em;" src="images/br1.jpg" alt="sheraton-oran-immeuble" width="317px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
-                <h3 style="color: orange;">Hôtel Sheraton Oran</h3>
-                <p style="color: black;"> <img src="images/icons8-google-maps.gif" alt="icons8-google-maps" width="30px">Boulevard du 19 Mars,Route Des Falaises, Oran 31000 Algérie</p>
+                <h3 style="color: orange;">Gran Hotel La Florida G.L Monumento</h3>
+                <p style="color: black;"> <img src="images/icons8-google-maps.gif" alt="icons8-google-maps" width="30px">Carretera Vallvidrera-Tibidabo, 83-93, Horta-Guinardó, 08035 Barcelone, Espagne</p>
                 <br>
                 <span><img src="images/icons8-5-star-hotel-64.png" alt="icons8-4-star-hotel-64"></span>
                 <div style="position: relative; top: 20px;">
@@ -170,7 +195,7 @@ $page="hotels";
         <!--Le Meridien Oran Hotel-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv algeria">
             <div>
-                <img src="images/Le Meridien.jpg" alt="Le Meridien
+                <img style="border-radius:1em;" src="images/Le Meridien.jpg" alt="Le Meridien
                 " width="317px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
@@ -191,7 +216,7 @@ $page="hotels";
         <!--Hôtel Sheraton Annaba-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv algeria">
             <div>
-                <img src="images/Sheraton Hotel, Annaba.jpg" alt="Sheraton Hotel, Annaba" width="317px" height="310px">
+                <img style="border-radius:1em;" src="images/Sheraton Hotel, Annaba.jpg" alt="Sheraton Hotel, Annaba" width="317px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hôtel Sheraton Annaba</h3>
@@ -206,15 +231,15 @@ $page="hotels";
 
 
         <!--Hôtel Sabri Annaba-->
-        <div style="background-color:white; border-radius:1em;" class="filterDiv algeria">
+        <div style="background-color:white; border-radius:1em;" class="filterDiv france">
             <div>
-                <img src="images/Hôtel Sabri à Annaba.jpg" alt="Hôtel Sabri à Annaba" width="317px" height="310px">
+                <img style="border-radius:1em;" src="images/pa1.jpg" alt="Hôtel Sabri à Annaba" width="317px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
-                <h3 style="color: orange;">Hôtel Sabri Annaba</h3>
-                <p style="color: black;"> <img src="images/icons8-google-maps.gif" alt="icons8-google-maps" width="30px">Route du Cap de Garde Plage Refes Zahouane, Annaba 23000 Algérie
+                <h3 style="color: orange;">InterContinental Paris Le Grand, an IHG Hotel</h3>
+                <p style="color: black;"> <img src="images/icons8-google-maps.gif" alt="icons8-google-maps" width="30px">2 Rue Scribe, 9e arr., 75009 Paris, France
                 </p>
-                <span><img src="images/icons8-4-star-hotel-64.png" alt="icons8-4-star-hotel-64"></span>
+                <span><img src="images/icons8-5-star-hotel-64.png" alt="icons8-4-star-hotel-64"></span>
                 <div style="position: relative; top: 20px;">
                     <a href="#" id="det">Details</a>
                 </div>
@@ -224,7 +249,7 @@ $page="hotels";
         <!--Hôtel Marriott Bab Ezzouar-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv algeria">
             <div>
-                <img src="images/Algiers Marriott Hotel Bab Ezzouar.jpg" alt="Algiers Marriott Hotel Bab Ezzouar
+                <img style="border-radius:1em;" src="images/Algiers Marriott Hotel Bab Ezzouar.jpg" alt="Algiers Marriott Hotel Bab Ezzouar
                 " width="317px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
@@ -240,14 +265,13 @@ $page="hotels";
         
         
         <!--La Gazelle d'or-->
-        <div style="background-color:white; border-radius:1em;" class="filterDiv algeria">
+        <div style="background-color:white; border-radius:1em;" class="filterDiv greece">
             <div>
-                <img src="images/La Gazelle d'or.jpg" alt="La Gazelle d'or
-                " width="317px" height="310px">
+                <img style="border-radius:1em;" src="images/my1.jpg" alt="La Gazelle d'or" width="317px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
-                <h3 style="color: orange;">Hôtel La Gazelle d'or</h3>
-                <p style="color: black;"> <img src="images/icons8-google-maps.gif" alt="icons8-google-maps" width="30px"> N16 Route de Touggourt, Oued El Alenda 39069 Algérie</p>
+                <h3 style="color: orange;">Petinos Hotel</h3>
+                <p style="color: black;"> <img src="images/icons8-google-maps.gif" alt="icons8-google-maps" width="30px">  Platis Yialos Beach, Platis Gialos, 84600, Grèce</p>
                 <br>
                 <span><img src="images/icons8-4-star-hotel-64.png" alt="icons8-4-star-hotel-64"></span>
                 <div style="position: relative; top: 20px;">
@@ -263,7 +287,7 @@ $page="hotels";
         <!--Hotel The Ritz-Carlton-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv maldives">
             <div>
-                <img src="images/The Ritz-Carlton Maldives.jpeg" alt="The Ritz-Carlton Maldives" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/The Ritz-Carlton Maldives.jpeg" alt="The Ritz-Carlton Maldives" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel The Ritz-Carlton</h3>
@@ -282,7 +306,7 @@ $page="hotels";
         <!--Hotel Heritance Aarah-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv maldives">
             <div>
-                <img src="images/Heritance Aarah.jpg" alt="Heritance Aarah" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Heritance Aarah.jpg" alt="Heritance Aarah" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Heritance Aarah</h3>
@@ -301,7 +325,7 @@ $page="hotels";
         <!--Hotel Naladhu-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv maldives">
             <div>
-                <img src="images/Naladhu.jpg" alt="Naladhu" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Naladhu.jpg" alt="Naladhu" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Naladhu</h3>
@@ -318,7 +342,7 @@ $page="hotels";
         <!--Hotel North Male Atoll-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv maldives">
             <div>
-                <img src="images/North Male Atoll, Maldives.jpg" alt="North Male Atoll" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/North Male Atoll, Maldives.jpg" alt="North Male Atoll" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel North Male Atoll</h3>
@@ -335,7 +359,7 @@ $page="hotels";
         <!--Hotel Soneva Jani-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv maldives">
             <div>
-                <img src="images/Soneva Jani.jpg" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Soneva Jani.jpg" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Soneva Jani</h3>
@@ -354,7 +378,7 @@ $page="hotels";
         <!--InterContinental Istanbul-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv  istanbul">
             <div>
-                <img src="images/Tripadvisor.jpg" alt="InterContinental Istanbul" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Tripadvisor.jpg" alt="InterContinental Istanbul" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel InterContinental Istanbul</h3>
@@ -371,7 +395,7 @@ $page="hotels";
         <!--Celal Aga Konagi Metro Hotel-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv istanbul">
             <div>
-                <img src="images/Hôtels près de Place Taksim.jpg" alt="Celal Aga Konagi Metro Hotel" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Hôtels près de Place Taksim.jpg" alt="Celal Aga Konagi Metro Hotel" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Celal Aga Konagi Metro</h3>
@@ -388,7 +412,7 @@ $page="hotels";
         <!--Hotel Ajwa Sultanahmet-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv istanbul">
             <div>
-                <img src="images/Ajwa Hotel Sultanahmet, Istanbul, Marmara.jpg" alt="Ajwa Hotel Sultanahmet, Istanbul, Marmara" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Ajwa Hotel Sultanahmet, Istanbul, Marmara.jpg" alt="Ajwa Hotel Sultanahmet, Istanbul, Marmara" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Ajwa SultanAhmet</h3>
@@ -406,7 +430,7 @@ $page="hotels";
         <!--Hotel-titanic-antalya-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv istanbul">
             <div>
-                <img src="images/hotel-titanic-antalya.jpg" alt="Hotel-titanic-antalya" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/hotel-titanic-antalya.jpg" alt="Hotel-titanic-antalya" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Titanic Antalya</h3>
@@ -424,7 +448,7 @@ $page="hotels";
         <!--Hotel Delphin Palace Hotel-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv istanbul">
             <div>
-                <img src="images/Delphin Palace Hotel.jpg" alt="Delphin Palace Hotel" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Delphin Palace Hotel.jpg" alt="Delphin Palace Hotel" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Ajwa Sultanahmet</h3>
@@ -447,7 +471,7 @@ $page="hotels";
         <!--Hotel Burj al Arab-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv dubai">
             <div>
-                <img src="images/Burj al Arab Dubai.jpg" alt="Burj al Arab Dubai" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Burj al Arab Dubai.jpg" alt="Burj al Arab Dubai" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Burj al Arab</h3>
@@ -465,7 +489,7 @@ $page="hotels";
         <!--Hotel l-Atlantis-The-Palm-->
         <div style="background-color:white; border-radius:1em;" class="filterDiv dubai ">
             <div>
-                <img src="images/L-hotel-parc-d-attractions-l-Atlantis-The-Palm-a-Dubai.jpg" alt="L-hotel-parc-d-attractions-l-Atlantis-The-Palm-a-Dubai" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/L-hotel-parc-d-attractions-l-Atlantis-The-Palm-a-Dubai.jpg" alt="L-hotel-parc-d-attractions-l-Atlantis-The-Palm-a-Dubai" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel l-Atlantis-The-Palm</h3>
@@ -483,7 +507,7 @@ $page="hotels";
 
         <div style="background-color:white; border-radius:1em;" class="filterDiv dubai">
             <div>
-                <img src="images/Voco Dubai.jpg" alt="voco Dubai" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Voco Dubai.jpg" alt="voco Dubai" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Voco Dubai</h3>
@@ -501,7 +525,7 @@ $page="hotels";
 
         <div style="background-color:white; border-radius:1em;" class="filterDiv dubai">
             <div>
-                <img src="images/Jumeirah Al Naseem.jpg" alt="Jumeirah Al Naseem" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Jumeirah Al Naseem.jpg" alt="Jumeirah Al Naseem" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Jumeirah Al Naseem</h3>
@@ -519,7 +543,7 @@ $page="hotels";
 
         <div style="background-color:white; border-radius:1em;" class="filterDiv dubai">
             <div>
-                <img src="images/JW Marriott Marquis Hotel.jpg" alt="JW Marriott Marquis Hotel" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/JW Marriott Marquis Hotel.jpg" alt="JW Marriott Marquis Hotel" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel JW Marriott Marquis</h3>
@@ -538,7 +562,7 @@ $page="hotels";
 
         <div style="background-color:white; border-radius:1em;" class="filterDiv dubai">
             <div>
-                <img src="images/Sheraton Mall of the Emirates Hotel.jpg" alt="Sheraton Mall of the Emirates Hotel" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Sheraton Mall of the Emirates Hotel.jpg" alt="Sheraton Mall of the Emirates Hotel" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Sheraton Mall of Emirates</h3>
@@ -558,7 +582,7 @@ $page="hotels";
 
         <div style="background-color:white; border-radius:1em;" class="filterDiv istanbul">
             <div>
-                <img src="images/Swissotel The Bosphorus Istanbul.jpg" alt="Swissotel The Bosphorus Istanbul" width="310px" height="310px">
+                <img style="border-radius:1em;" src="images/Swissotel The Bosphorus Istanbul.jpg" alt="Swissotel The Bosphorus Istanbul" width="310px" height="310px">
             </div>
             <div style="position: relative; bottom: 40px;line-height: 1.5;">
                 <h3 style="color: orange;">Hotel Swissotel The Bosphorus</h3>

@@ -263,11 +263,11 @@ if(isset($_POST['register']))
             $mail->isSMTP();                                            
             $mail->Host       = 'smtp.gmail.com';                    
             $mail->SMTPAuth   = true;                                  
-            $mail->Username   = 'anissannabi2@gmail.com';                    
-            $mail->Password   = 'kkbgmtahiadbadzk';                           
+            $mail->Username   = 'odysseytravelsagency23@gmail.com';                    
+            $mail->Password   = 'qnhemlboslyltjpx';                           
             $mail->SMTPSecure = 'ssl';           
             $mail->Port       = 465;                                   
-            $mail->setFrom('anissannabi2@gmail.com');
+            $mail->setFrom('odysseytravelsagency23@gmail.com');
             $mail->addAddress($email);    
             $mail->isHTML(true);
                                 
@@ -420,7 +420,7 @@ if(isset($_POST['register']))
                 <div>
 
                     <label for="">ID:  <?php if(isset($e_id) && $e_id!="") echo $e_id; ?></label><br>
-                   <input type="number" name="id_user" value="<?= mt_rand(99999,999999999);?>" id="" >
+                   <input type="number" name="id_user" value="<?= mt_rand(99999999,999999999);?>" id="" >
 
                 </div>
 

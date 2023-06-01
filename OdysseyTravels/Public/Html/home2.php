@@ -2,7 +2,17 @@
 require_once "../../core/autoload.php";
 
 session_start();
+
 $error=0;
+if(isset($_SESSION['email']))
+{
+    $emmail=$_SESSION['email'];
+    $get_id_user=mysqli_query($conn,"SELECT id FROM users WHERE email='$emmail' LIMIT 1");
+    foreach($get_id_user as $user)
+    {
+        $id_user=$user['id'];
+    }
+}
 $r = mysqli_query($conn, "SELECT * from ville_depart");
 $s = mysqli_query($conn, "SELECT * from ville_arrivee");
 
@@ -33,11 +43,7 @@ if(isset($_POST['reserve']))
     }else
     {
         $country_to=clear($_POST['country_to']);
-        if(!in_array($country_to,['France','United Kingdom','Usa','Spain','Italy']))
-        {
-            $e_country_to="select a town not a text!";
-            $error=1;
-        }
+       
     }
 
     if(!isset($_POST['depart']) || empty($_POST['depart']))
@@ -111,12 +117,31 @@ if(isset($_POST['reserve']))
             }
          }
 
+         $timee = date("F j, Y, g:i a");
      
+if($error==0)
+{
+      $test_reservation=mysqli_query($conn,"SELECT date_retour FROM `reservation_vol` WHERE id='$id_user' AND date_retour > '$depart' ");
+      if(mysqli_num_rows($test_reservation) > 0)
+      {
+        $_SESSION['notconnected']="you can't choose this depart_date!";
+        header('location:home2.php');
+        die;
 
+      }else{
+        $sql=mysqli_query($conn,"INSERT INTO `reservation_vol`(`id`, `nbr_personne`, `date_depart`, `date_retour`, `ville_depart`, `ville_arive`, `time_reservation`) VALUES 
+        ('$id_user','$nbr_person','$depart','$return','$countryfrom','$country_to','$timee')");
+        if($sql)
+        {
+            $_SESSION['creat']="reservation saved successesfuly!";
+            header('location:hotels.php');
+            die;
+        }
+      }
       
 
 }
-
+}
 
 ?>
 
@@ -162,7 +187,7 @@ if(isset($_POST['reserve']))
           <li><a href="aboutus.php" class='<?php if($page== "aboutus"){echo "active";}?>'>ABOUT US</a></li>
           <?php if(isset($_SESSION['email'])):?>
                
-               <li><a href="compte.php" class='<?php if($page== "account"){echo "active";}?>'>ACCOUNT</a></li>
+               <!-- <li><a href="compte.php" class='<?php if($page== "account"){echo "active";}?>'>ACCOUNT</a></li> -->
                <li><a href="profil.php" class='<?php if($page== "profil"){echo "active";}?>'>PROFIL</a></li>
 
                
@@ -200,6 +225,8 @@ if(isset($_POST['reserve']))
     ?>
 </div>
 <?php endif; ?>
+
+
    
     <div class="main">
     <div class="flightbox">
@@ -221,7 +248,7 @@ if(isset($_POST['reserve']))
                 <br>
                 <?php if(isset($e_country_to)) echo $e_country_to; ?>
 
-                <select name="country_from" id="country">
+                <select name="country_to" id="country">
                     <option value="from" selected disabled>To</option>
                     <?php
                 while($row = mysqli_fetch_array($s)){
